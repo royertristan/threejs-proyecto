@@ -1,0 +1,252 @@
+/* Variables de colores - Estilo Cyberpunk Neon */
+:root {
+  --cian-neon: #0ff;
+  --rosa-neon: #f0f;
+  --morado-neon: #90f;
+  --espacio-profundo: #000;
+  --azul-cyber: #002;
+  --oscuro-cyber: #001;
+  --resaltado-cyber: rgba(0, 255, 255, 0.15);
+  --panel-cyber: rgba(0, 0, 20, 0.85);
+  --titulo-cyber: rgba(0, 20, 40, 0.95);
+}
+
+/* Estilo general del body */
+body {
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
+  background: var(--espacio-profundo);
+  font-family: 'Rajdhani', 'Courier New', monospace;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 100, 255, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.1) 0%, transparent 30%);
+}
+
+/* Estilo para el panel de información */
+#info {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  color: var(--cian-neon);
+  font-family: 'Orbitron', 'Courier New', monospace;
+  text-shadow: 
+    0 0 5px var(--cian-neon),
+    0 0 10px var(--cian-neon),
+    0 0 20px rgba(0, 255, 255, 0.3);
+  pointer-events: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 10px 0;
+}
+
+/* Pantalla de carga - Carga estilo Cyberpunk Neon */
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--espacio-profundo);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  color: var(--cian-neon);
+  font-family: 'Rajdhani', 'Courier New', monospace;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 
+    0 0 5px var(--cian-neon),
+    0 0 10px var(--cian-neon),
+    0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Texto de carga */
+#loadingText {
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+/* Panel de Control - Pegado a la izquierda con título flotante */
+.lil-gui {
+  --width: 300px;
+  --font-size: 12px;
+  --input-height: 22px;
+  --padding: 8px;
+  --spacing: 8px;
+  --background-color: var(--panel-cyber);
+  --text-color: var(--cian-neon);
+  --title-background-color: transparent;
+  --hover-color: var(--resaltado-cyber);
+  --focus-color: rgba(0, 200, 255, 0.4);
+  --number-color: var(--cian-neon);
+  --string-color: var(--rosa-neon);
+  --boolean-color: var(--morado-neon);
+  
+  right: auto !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0;
+  border: 1px solid var(--cian-neon);
+  border-left: none !important;
+  box-shadow: 
+    0 0 15px var(--cian-neon),
+    inset 0 0 10px rgba(0, 255, 255, 0.3);
+  border-radius: 0 4px 4px 0;
+  font-family: 'Rajdhani', 'Courier New', monospace;
+  backdrop-filter: blur(8px) brightness(1.2);
+  transition: all 0.3s ease;
+}
+
+/* Título flotante con efecto neon */
+.lil-gui .title {
+  background: transparent !important;
+  color: var(--cian-neon) !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  padding: 15px 12px 5px !important;
+  text-shadow: 
+    0 0 8px var(--cian-neon),
+    0 0 16px rgba(0, 255, 255, 0.4);
+  font-size: 13px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* Efecto de borde inferior solo para el título */
+.lil-gui .title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--cian-neon),
+    transparent
+  );
+  box-shadow: 0 0 5px var(--cian-neon);
+}
+
+/* Controles con fondo normal */
+.lil-gui .controller {
+  border-left: none !important;
+  padding: 10px 12px !important;
+  border-bottom: 1px dashed rgba(0, 255, 255, 0.4);
+  background-color: rgba(0, 15, 30, 0.6) !important;
+  transition: all 0.2s ease;
+  cursor: pointer !important;
+}
+
+/* Efecto hover en controles */
+.lil-gui .controller:hover {
+  background-color: rgba(0, 40, 80, 0.8) !important;
+  border-bottom-color: var(--cian-neon);
+}
+
+/* Campos de texto */
+.lil-gui input[type=text] {
+  background: rgba(0, 5, 10, 0.8) !important;
+  color: var(--cian-neon) !important;
+  border: 1px solid var(--cian-neon) !important;
+  padding: 4px 6px !important;
+  font-family: 'Courier New', monospace;
+  box-shadow: 
+    inset 0 0 5px rgba(0, 255, 255, 0.2),
+    0 0 5px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Deslizadores */
+.lil-gui .slider {
+  background: linear-gradient(
+    to right, 
+    var(--oscuro-cyber), 
+    var(--cian-neon),
+    var(--oscuro-cyber)
+  ) !important;
+  height: 4px !important;
+  border-radius: 0 !important;
+  box-shadow: 
+    inset 0 0 5px rgba(0, 0, 0, 0.5),
+    0 0 5px var(--cian-neon);
+}
+
+/* Pulsador del deslizador */
+.lil-gui .slider::-webkit-slider-thumb {
+  background: var(--cian-neon) !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  box-shadow: 
+    0 0 5px var(--cian-neon),
+    0 0 10px var(--cian-neon);
+  border: 2px solid #000 !important;
+  cursor: pointer !important;
+}
+
+/* Botón de cerrar */
+.lil-gui .close-button {
+  color: var(--cian-neon) !important;
+  text-shadow: 
+    0 0 5px var(--cian-neon),
+    0 0 10px rgba(0, 255, 255, 0.3);
+  font-size: 16px !important;
+  transition: all 0.3s ease;
+  background: transparent !important;
+}
+
+/* Efecto hover en botón de cerrar */
+.lil-gui .close-button:hover {
+  color: #fff !important;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff;
+}
+
+/* Quitar las flechas de incremento/decremento */
+.lil-gui .widget input[type="number"]::-webkit-inner-spin-button,
+.lil-gui .widget input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.lil-gui .widget input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  cursor: text !important;
+}
+
+/* Estilo para el contenedor del slider */
+.lil-gui .slider-container {
+  cursor: pointer !important;
+}
+
+/* Ajustes para los inputs numéricos */
+.lil-gui .widget input[type="number"] {
+  background: rgba(0, 5, 10, 0.8) !important;
+  color: var(--cian-neon) !important;
+  border: 1px solid var(--cian-neon) !important;
+  padding: 4px 6px !important;
+  box-shadow: 
+    inset 0 0 5px rgba(0, 255, 255, 0.2),
+    0 0 5px rgba(0, 255, 255, 0.1);
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1000;
+}

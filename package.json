@@ -1,0 +1,16 @@
+{
+  "name": "tres-js",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.18"
+  },
+  "dependencies": {
+    "stats.js": "^0.17.0",
+    "three": "^0.178.0"
+  }
+}
