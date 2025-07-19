@@ -22,7 +22,7 @@ Math.lerp = function ( valor1, valor2, cantidad ) {
     return valor1 + ( valor2 - valor1 ) * cantidad;
 };
 
-const modelos = [ 'models/cigueña.glb'];
+const modelos = [ '/models/ciguena.glb'];
 const colores = [ 0xccFFFF, 0xffdeff ];
 const tamanos = [ 0.2, 0.1 ];
 const modeloSeleccionado = Math.floor( Math.random() * modelos.length );
